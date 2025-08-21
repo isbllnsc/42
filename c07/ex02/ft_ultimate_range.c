@@ -5,28 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/19 22:57:59 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/08/20 11:16:26 by isabde-s         ###   ########.fr       */
+/*   Created: 2025/08/21 14:10:04 by isabde-s          #+#    #+#             */
+/*   Updated: 2025/08/21 14:20:42 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
-	int	*vet;
+	int	size;
 
-	vet = (int *)malloc(sizeof(int) * (max - min));
+	*range = (int *)malloc(sizeof(int) * (max - min));
 	i = 0;
+	size = max - min;
+	if (*range == NULL)
+		return (-1);
 	while (min < max)
 	{
-		vet[i] = min;
-		min++;
+		(*range)[i] = min;
+		min ++;
 		i++;
 	}
-	return (vet);
+	return (size);
 }
-
+/*
+#include <stdio.h>
 int	main(void)
 {
-	
-}
+	int	*vet = NULL;
+	int	i = 0;
+	int	min = 10;
+	int	max = 23;
+
+	printf("%d\n\n", ft_ultimate_range(&vet, min, max));
+
+	while (i < (max - min))
+	{
+		printf("%d ", vet[i]);
+		i++;
+	}
+}*/
