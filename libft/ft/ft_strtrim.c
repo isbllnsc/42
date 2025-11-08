@@ -6,11 +6,11 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:47:21 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 16:47:56 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/07 19:15:44 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	check(char c, const char *set)
 {
