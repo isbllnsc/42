@@ -10,42 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+#include <stdlib.h>
 
 char	**ft_split(char const *s, char c)
 {
 	int	i;
-
-	char *str = malloc(sizeof(char) * n)
-	char list[][] = malloc(sizeof(char *) * p)
+	int	countw;
+	int	start;
+	int	lenw;
+	char    **list;
 
 	i = 0;
+	countw = 0;
+	lenw = 0;
 	while (s[i])
 	{
-		while(str[i] <= 32)
+		while (s[i] && (s[i] <= 32 || s[i] == c))
 			i++;
+		
 		countw++;
-		while(str[i] && str[i] > 32)
-			i++;
-	}
-	list = malloc(sizof(char *) * (countw + 1));
-	i = 0;
-	while(str[i])
-	{
-		while(str[1])
-	}
-	
 
-
-	list[0] = malloc(sizeof(char) * n);
-
-	i = 0;
-
-	while (s[i])
-	{
-		if (s[i] == c)
+		start = i;
+		while (s[i] && (s[i] != c && s[i] > 32))
 		{
-			
+			i++;
 		}
+		lenw = i - start;
+		list = malloc(sizeof(char *) * (countw + 1)); //pointers array
+		list[i] = malloc(sizeof(char) * (lenw + 1));
 	}
+
+	list[countw] = NULL;
+
+	return (list);
+}
+
+int	main()
+{
+	ft_split("um dois tres", ' ');
 }
