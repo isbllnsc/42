@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:07:46 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 16:24:47 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/14 16:58:59 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {

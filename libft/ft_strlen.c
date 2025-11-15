@@ -6,13 +6,13 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:06:02 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/10/16 18:17:05 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:41:29 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

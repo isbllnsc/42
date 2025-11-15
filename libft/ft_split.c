@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:56:28 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 21:07:55 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/14 20:11:06 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**ft_split(char const *s, char c)
 	w = 0;
 	countw = 0;
 	lenw = 0;
-	while (s[i]) // to count words
+	while (s[i])
 	{
 		while (s[i] && (s[i] < 33 || s[i] == c))
 			i++;
@@ -40,10 +40,10 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 
-	list = malloc(sizeof(char *) * (countw + 1)); // to allocate array of strs
+	list = malloc(sizeof(char *) * (countw + 1));
 
 	i = 0;
-	while (s[i]) // to find the lenght of the words(strings)
+	while (s[i])
 	{
 		while (s[i] && (s[i] < 33 || s[i] == c))
 			i++;
@@ -73,7 +73,18 @@ char	**ft_split(char const *s, char c)
 		return (list);
 }
 
-int	main()
+#include <stdio.h>
+
+int     main()
 {
-	ft_split("um dois tres", ' ');
+        int     i = 0;
+        char    **list;
+
+        list = ft_split("um dois tres", ' ');
+        while (list[i])
+        {
+                printf("%s\n", list[i]);
+                i++;
+	}
 }
+
