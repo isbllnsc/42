@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
-
-	s[i] = '\0';
+	while (s[i++])
+		write(fd, &s[i - 1], 1);
 }
-
-void	f_aux(unsigned int i, char *s)
-{
-	*s = '*';
-	(void)i;
-}
-
+/*
 #include <stdio.h>
 int	main()
 {
-	char str[] = "isa";
-	ft_striteri(str, f_aux);
-	printf("%s", str);
-	
-}
+	ft_putstr_fd("isabella", 1);
+}*/
