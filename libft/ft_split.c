@@ -1,75 +1,87 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:56:28 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/14 20:11:06 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/14 21:14:39 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
 #include <stdlib.h>
 
-char	**ft_split(char const *s, char c)
+static int	countw(char const *s, char c)
+{
+	int	countw;
+	int	i;
+
+	countw = 0;
+	i = 0;
+        while (s[i])
+        {
+                while (s[i] && (s[i] == c))
+			i++;
+		if (s[i] == '\0')
+			return (countw);
+                countw++;
+
+                while (s[i] && (s[i] != c))
+                {
+                        i++;
+                }
+        }
+	return (countw);
+}
+
+static void	ft_lenw(char const *s, char c, int start, char **list)
 {
 	int	i;
+	int	j;
 	int	w;
-	int	countw;
-	int	start;
+
+	i = 0;
+	j = 0;
+	w = 0;
+	while (s[i])
+        {
+                while (s[i] && (s[i] == c))
+                        i++;
+                start = i;
+                while (s[i] && (s[i] != c))
+                        i++;
+		if (s[i] == '\0')
+			break ;
+                list[w] = malloc(sizeof(char) * ((i - start) + 1));
+                j = 0;
+                while (j < (i - start))
+                {
+                        list[w][j] = s[start + j];
+                        j++;
+                }
+                list[w++][j] = '\0';
+        }
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int	w;
 	int	lenw;
 	char    **list;
-	int	j;
+	int	start;
 
-	i = 0;
-	w = 0;
-	countw = 0;
+	if (s == NULL)
+		return (NULL);
+
+	w = countw(s, c);
 	lenw = 0;
-	while (s[i])
-	{
-		while (s[i] && (s[i] < 33 || s[i] == c))
-			i++;
-		
-		countw++;
+	start = 0;
 
-		while (s[i] && (s[i] > 32 && s[i] != c))
-		{
-			i++;
-		}
-	}
-
-	list = malloc(sizeof(char *) * (countw + 1));
-
-	i = 0;
-	while (s[i])
-	{
-		while (s[i] && (s[i] < 33 || s[i] == c))
-			i++;
-
-		start = i;
-		
-		while (s[i] && (s[i] > 32 && s[i] != c))
-			i++;
-
-		lenw = i - start; // start = beginning of each string; i = ending
-
-		list[w] = malloc(sizeof(char) * (lenw + 1)); // to allocate strs
-
-
-		j = 0;
-		while (j < lenw)
-		{
-			list[w][j] = s[start + j];
-			j++;
-		}
-		list[w][j] = '\0';
-		w++;
-	}
-
-		list[w] = NULL;
-
+	list = malloc(sizeof(char *) * (w + 1));
+	list[w] = NULL;
+	ft_lenw(s, c, start, list);
 		return (list);
 }
 
@@ -80,11 +92,10 @@ int     main()
         int     i = 0;
         char    **list;
 
-        list = ft_split("um dois tres", ' ');
+        list = ft_split("um dois tres   ", ' ');
         while (list[i])
         {
                 printf("%s\n", list[i]);
                 i++;
 	}
 }
-
