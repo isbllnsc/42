@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+// excluir
+int	ft_strlen(char *s)
 {
-	char	*s2;
+	int i = 0;
+	while (s[i++]);
+	return i;
+}
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
 	int	i;
-
-	s2 = malloc((ft_strlen((char *)s) + 1));
-
-	if (!s2)
-		return (NULL);
 
 	i = 0;
 	while (s[i])
 	{
-		s2[i] = f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 
-	s2[i] = '\0';
-	return (s2);
+	s[i] = '\0';
 }
-/*
-char	ft_aux(unsigned int i, char c)
+
+void	f_aux(unsigned int i, char *s)
 {
-	return (c - 32);
+	*s = '*';
 	(void)i;
 }
+
 #include <stdio.h>
 int	main()
 {
-	printf("%s", ft_strmapi("isabella", ft_aux));
-}*/
+	char str[] = "isa";
+	ft_striteri(str, f_aux);
+	printf("%s", str);
+	
+}
