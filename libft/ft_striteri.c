@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdlib.h>
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
@@ -26,7 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	s[i] = '\0';
 }
-
+/*
 void	f_aux(unsigned int i, char *s)
 {
 	*s = '*';
@@ -40,4 +37,4 @@ int	main()
 	ft_striteri(str, f_aux);
 	printf("%s", str);
 	
-}
+}*/

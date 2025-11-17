@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	check(char c, const char *set)
+static int	check(char c, const char *set)
 {
 	int	i;
 
@@ -36,20 +36,15 @@ char	*ft_strtrim(const char *s1, const char *set)
 
 	if (!s1 || !set)
 		return (NULL);
-
 	beg = 0;
 	while (s1[beg] && check(s1[beg], set))
 		beg++;
-
 	end = ft_strlen(s1);
 	while (end > beg && check(s1[end - 1], set))
 		end--;
-
 	cpys1 = malloc(end - beg + 1);
-
-	if (!cpys1) //if the allocation fails
+	if (!cpys1)
 		return (NULL);
-
 	i = 0;
 	while (beg < end)
 	{
@@ -57,9 +52,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		i++;
 		beg++;
 	}
-	
 	cpys1[i] = '\0';
-
 	return (cpys1);
 }
 /*

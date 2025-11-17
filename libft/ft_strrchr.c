@@ -18,9 +18,7 @@ char *ft_strrchr(const char *s, int c)
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
 
 	if ((unsigned char)c == '\0')
 		return ((char *)s + i);
@@ -28,9 +26,7 @@ char *ft_strrchr(const char *s, int c)
 	while (i >= 0 && s[i - 1])
 	{
 		if ((unsigned char)s[i - 1] == (unsigned char)c)
-		{
 			return ((char *)s + (i - 1));
-		}
 		i--;
 	}
 
@@ -38,7 +34,6 @@ char *ft_strrchr(const char *s, int c)
 }
 /*
 #include <stdio.h>
-
 int	main()
 {
 	printf("%s\n", ft_strrchr("aabbcc", 'b'));

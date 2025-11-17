@@ -14,40 +14,31 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str1;
-	char	*str2;
-	char	*str3;
-	int	i;
-	int	j;
+	char	*s3;
+	size_t	i;
+	size_t	j;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-
-	str3 = malloc(ft_strlen(str1) + ft_strlen(str2));
-
+	s3 = malloc(ft_strlen(s1) + ft_strlen(s2));
 	i = 0;
-	while (str1[i])
+	while (s1[i])
 	{
-		str3[i] = str1[i];
+		s3[i] = s1[i];
 		i++;
 	}
 
 	j = 0;
-	while (str2[j])
+	while (s2[j])
 	{
-		str3[i] = str2[j];
+		s3[i] = s2[j];
 		j++;
 		i++;
 	}
-
-	str3[i] = '\0';
-
-	return (str3);
+	s3[i] = '\0';
+	return (s3);
 }
 /*
 #include <stdio.h>
-
 int	main()
 {
-	printf("%s", ft_strjoin("isa", "bella"));
+	printf("%s\n", ft_strjoin("isa", "bella"));
 }*/

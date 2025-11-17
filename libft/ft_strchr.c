@@ -20,16 +20,13 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if ((unsigned char)s[i] == (unsigned char)c)
-		{
 			return ((char *)s + i);
-		}
 		i++;
 	}
 	return (NULL);
 }
 /*
 #include <stdio.h>
-
 int	main()
 {
 	printf("%s", ft_strchr("isabella", 'b'));
