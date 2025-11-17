@@ -42,7 +42,6 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	str[count] = '\0';
-
 	if (nb < 0)
 		nb *= -1;
 	if (nb == 0)
