@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_2.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdlib.h>
+#include "libft.h"
 
 static int	countw(char const *s, char c)
 {
@@ -84,9 +83,8 @@ char	**ft_split(char const *s, char c)
 	ft_lenw(s, c, start, list);
 		return (list);
 }
-
+/*
 #include <stdio.h>
-
 int     main()
 {
         int     i = 0;
@@ -98,4 +96,4 @@ int     main()
                 printf("%s\n", list[i]);
                 i++;
 	}
-}
+}*/
