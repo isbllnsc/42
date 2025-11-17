@@ -3,12 +3,11 @@
 
 #include <unistd.h>
 
-int	ft_isalpha(int n); ok
-int	ft_isdigit(int n); ok
-int	ft_isalnum(int n); ok
-int	ft_isascii(int n); ok
-int	ft_isprint(int n); ok
-
+int	ft_isalpha(int n);
+int	ft_isdigit(int n);
+int	ft_isalnum(int n);
+int	ft_isascii(int n);
+int	ft_isprint(int n);
 size_t	strlen(const char *s);
 
 void	*ft_memset(void *s, int c, size_t n); ok
