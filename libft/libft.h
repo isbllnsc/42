@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 15:24:30 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/18 16:07:55 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:12:34 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stdlib.h>
 
 int		ft_isalpha(int n);
-int     	ft_isdigit(int n);
-int     	ft_isalnum(int n);
-int     	ft_isascii(int n);
-int     	ft_isprint(int n);
-int     	ft_isalpha(int n);
+int		ft_isdigit(int n);
+int		ft_isalnum(int n);
+int		ft_isascii(int n);
+int		ft_isprint(int n);
+int		ft_isalpha(int n);
 int		ft_isdigit(int n);
 int		ft_isalnum(int n);
 int		ft_isascii(int n);
