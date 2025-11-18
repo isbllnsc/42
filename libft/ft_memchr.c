@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:36:59 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 16:37:45 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:04:24 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str;
-	
 
 	i = 0;
 	str = (unsigned char *)s;

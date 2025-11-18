@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:42:36 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 16:42:59 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:16:32 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,30 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	src_len;
 
+	if (!src || !dst)
+		return (0);
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	i = 0;
-	src_len = 0;
-	while (src[src_len])
+	while ((i < dstsize - 1) && src[i])
 	{
-		src_len++;
-	}
-
-	if (dstsize > 0)
-	{
-		while ((i < dstsize - 1) && src[i])
-		{
-			dst[i] = src[i];
-			i++;
-		}
+		dst[i] = src[i];
+		i++;
 	}
 	dst[i] = '\0';
-
-	return (src_len);
+	return (ft_strlen(src));
 }
 /*
 #include <stdio.h>
-#include <string.h>
-
 int	main ()
 {
 	char	dst[10] = "isa";
 	const char	*src = "bella";
 
-	printf("%ld\n", ft_strlcpy(dst, src, sizeof(dst)));
+	printf("%zu\n", ft_strlcpy(dst, src, sizeof(dst)));
 	printf("%s\n", dst);
 
-	printf("%ld\n", strlcpy(dst, src, sizeof(dst)));
-	printf("%s\n", dst);
+//	printf("%d\n", strlcpy(dst, src, sizeof(dst)));
+//	printf("%s\n", dst);
 }*/

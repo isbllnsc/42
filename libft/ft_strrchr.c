@@ -6,30 +6,25 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:39:00 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 16:39:55 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:00:20 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	n;
 
 	i = 0;
+	n = (char)c;
 	while (s[i])
 		i++;
-
-	if ((unsigned char)c == '\0')
-		return ((char *)s + i);
-
-	while (i >= 0 && s[i - 1])
-	{
-		if ((unsigned char)s[i - 1] == (unsigned char)c)
-			return ((char *)s + (i - 1));
-		i--;
-	}
-
+	i += 1;
+	while (i--)
+		if (s[i] == n)
+			return ((char *)s + i);
 	return (NULL);
 }
 /*
@@ -38,6 +33,4 @@ int	main()
 {
 	printf("%s\n", ft_strrchr("aabbcc", 'b'));
 	printf("%s\n", ft_strrchr("aabbcc", '\0'));
-}
-*/
-// strrchr = string reverse character
+}*/

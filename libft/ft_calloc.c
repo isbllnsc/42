@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:29:28 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 16:33:40 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 15:48:55 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,11 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ptr;
 	size_t	total;
 
-	if (count > 0 && size > 0 && (SIZE_MAX / count < size))
+	if (count > 0 && size > 0 && ((unsigned char)-1 / count < size))
 		return (NULL);
-
 	total = count * size;
-
 	ptr = malloc(total);
-
 	ft_memset(ptr, 0, total);
-
 	return (ptr);
 }
 /*

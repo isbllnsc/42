@@ -6,82 +6,66 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:56:28 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/14 21:14:39 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:49:13 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	countw(char const *s, char c)
+static	size_t	countwords(char	const	*s, char c)
 {
-	int	countw;
-	int	i;
+	size_t	len;
 
-	countw = 0;
-	i = 0;
-        while (s[i])
-        {
-                while (s[i] && (s[i] == c))
-			i++;
-		if (s[i] == '\0')
-			return (countw);
-                countw++;
-
-                while (s[i] && (s[i] != c))
-                {
-                        i++;
-                }
-        }
-	return (countw);
+	len = 0;
+	while (*s)
+	{
+		if (*s != c)
+			len++;
+		while (*s && *s != c)
+			s++;
+		while (*s && *s == c)
+			s++;
+	}
+	return (len);
 }
 
-static void	ft_lenw(char const *s, char c, int start, char **list)
+static	void	free_split(char **final)
 {
-	int	i;
-	int	j;
-	int	w;
+	size_t	i;
 
-	i = 0;
-	j = 0;
-	w = 0;
-	while (s[i])
-        {
-                while (s[i] && (s[i] == c))
-                        i++;
-                start = i;
-                while (s[i] && (s[i] != c))
-                        i++;
-		if (s[i] == '\0')
-			break ;
-                list[w] = malloc(sizeof(char) * ((i - start) + 1));
-                j = 0;
-                while (j < (i - start))
-                {
-                        list[w][j] = s[start + j];
-                        j++;
-                }
-                list[w++][j] = '\0';
-        }
+	i = -1;
+	while (final[++i])
+		free(final[i]);
+	free(final);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	w;
-	int	lenw;
-	char    **list;
-	int	start;
+	size_t	i;
+	size_t	w;
+	size_t	ws;
+	char	**final;
 
 	if (s == NULL)
 		return (NULL);
-
-	w = countw(s, c);
-	lenw = 0;
-	start = 0;
-
-	list = malloc(sizeof(char *) * (w + 1));
-	list[w] = NULL;
-	ft_lenw(s, c, start, list);
-		return (list);
+	w = countwords(s, c);
+	final = malloc(sizeof(char *) * (w + 1));
+	if (final == NULL)
+		return (NULL);
+	i = -1;
+	while (++i < w)
+	{	
+		while (*s == c)
+			s++;
+		ws = 0;
+		while (s[ws] && s[ws] != c)
+			ws++;
+		final[i] = ft_substr(s, 0, ws);
+		if (final[i] == NULL)
+			return (free_split(final), NULL);
+		s += ws;
+	}
+	return (final[i] = NULL, final);
 }
 /*
 #include <stdio.h>

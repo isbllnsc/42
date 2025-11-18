@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:47:21 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/07 19:15:44 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:36:57 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,14 @@ static int	check(char c, const char *set)
 			return (1);
 		i++;
 	}
-
 	return (0);
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	int	beg;
-	int	end;
-	int	i;
+	int		beg;
+	int		end;
+	int		i;
 	char	*cpys1;
 
 	if (!s1 || !set)

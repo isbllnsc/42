@@ -6,14 +6,13 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 14:08:57 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/10/22 14:13:05 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:34:45 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_tolower(int c)
+int	ft_tolower(int c)
 {
-        if (c > 64 && c < 91)
-                c += 32;
-
-        return (c);
+	if (c > 64 && c < 91)
+		c += 32;
+	return (c);
 }

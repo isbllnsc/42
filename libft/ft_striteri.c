@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:56:28 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/11/14 21:14:39 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:43:36 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
-	i = 0;
-	while (s[i])
-	{
+	i = -1;
+	while (s[++i])
 		f(i, &s[i]);
-		i++;
-	}
-
 	s[i] = '\0';
 }
 /*
@@ -35,6 +31,5 @@ int	main()
 {
 	char str[] = "isa";
 	ft_striteri(str, f_aux);
-	printf("%s", str);
-	
+	printf("%s", str);	
 }*/

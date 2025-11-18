@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 16:31:42 by isabde-s          #+#    #+#             */
+/*   Updated: 2025/11/18 16:31:56 by isabde-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *string, const char *substring, size_t len)
@@ -7,7 +19,6 @@ char	*ft_strnstr(const char *string, const char *substring, size_t len)
 
 	if (*substring == '\0')
 		return ((char *)string);
-
 	i = 0;
 	while (i < len && string[i])
 	{

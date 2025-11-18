@@ -1,6 +1,6 @@
-NAME= libft.a
+NAME	=	libft.a
 
-SRCS=	ft_isalpha.c \
+SRCS	=	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
@@ -35,25 +35,26 @@ SRCS=	ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
-CC = cc
+OBJS	=	$(SRCS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+CC	=	cc
 
-OBJS= $(SRCS:.c=.o)
+CFLAGS = -Wall -Wextra -Werror
 
-all:$(NAME)
-.co:
-	$(CC) $(FLAGS)-c$<-0$(<:.c=.o)
+RM = rm -rf
 
-
-
+all: $(NAME)
+	
 $(NAME): $(OBJS)
-	ar rcs $@ $(OBJS)
-
+	ar rcs $(NAME)	$(OBJS)
+.c.o:
+	$(CC) $(CFLAGS)	-c $<
 clean:
-	rm -rf $(OBJS)
+	$(RM)	$(OBJS)
 
 fclean: clean
-	rm -rf $(NAME) $(OBJS)
+	$(RM)	$(NAME)
 
-RE: fclean all
+re: fclean all
+
+.PHONY: all clean fclean re
