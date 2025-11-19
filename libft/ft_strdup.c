@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s1)
 
 	str1 = (char *)s1;
 	str2 = malloc(ft_strlen(str1) + 1);
+	if (str2 == NULL)
+		return (NULL);
 	i = 0;
 	while (str1[i])
 	{
@@ -31,8 +33,9 @@ char	*ft_strdup(const char *s1)
 }
 /*
 #include <stdio.h>
-
 int	main()
 {
-	printf("%s", ft_strdup(""));
+	printf("%s\n", ft_strdup("aaa"));
+	printf("%s\n", ft_strdup("\0"));
+	printf("%s\n", ft_strdup(""));
 }*/
