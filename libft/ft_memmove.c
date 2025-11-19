@@ -30,9 +30,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 #include <stdio.h>
 int	main()
 {
-	char	src[] = "isabella";
-	char	dest[10];
+	char	s[] = "AAAaaa";
 
-	ft_memmove(dest, src, 3);
-	printf("%s", dest);
+//	ft_memmove(s, s + 3, 3);
+//	printf("%s\n", s);
+
+	ft_memmove(s + 3, s, 3);
+	printf("%s\n", s);
 }*/
