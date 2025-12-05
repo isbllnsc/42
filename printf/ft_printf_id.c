@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:50:27 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/12/05 17:01:13 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:38:24 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_printf_id(int n)
 
 	count = 0;
 	if (n >= 10)
-		count += ft_printf_id(n / 10)
-	return (count += ft_printf_id(n % 10 + '0'));
+		count += ft_printf_id(n / 10);
+	return ((count += ft_printf_id(n % (10 + '0'))));
 }
