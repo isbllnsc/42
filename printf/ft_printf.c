@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:34:18 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/12/05 18:45:19 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 20:13:06 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	print_type(char type, va_list args)
 {
-	size_t	count;
+	int	count;
 
 	count = 0;
 	if (type == 'u')
@@ -23,8 +23,10 @@ static int	print_type(char type, va_list args)
 		count += ft_printf_chr(va_arg(args, int));
 	else if (type == 's')
 		count += ft_printf_str(va_arg(args, char *));
-	else if (type == 'x' || type == 'X')
-		count += ft_printf_x(va_arg(args, int), t);
+	else if (type == 'x')
+		count += ft_printf_x_lower(va_arg(args, int));
+	else if (type == 'X')
+		count += ft_printf_x_upper(va_arg(args, int));
 	else if (type == 'p')
 		count += ft_printf_p(va_arg(args, void *));
 	else if (type == 'd' || type == 'i')
@@ -33,6 +35,7 @@ static int	print_type(char type, va_list args)
 		write(1, "%", 1);
 	else
 		return (-1);
+	return (count);
 }
 
 int	ft_printf(const char *str, ...)

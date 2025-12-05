@@ -3,6 +3,7 @@ NAME = libftprintf.a
 SRC = ft_printf.c \
 	ft_printf_cs.c \
 	ft_printf_x.c \
+	ft_printf_id.c \
 	ft_printf_u.c \
 	ft_printf_p.c \
 

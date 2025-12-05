@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:13:15 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/12/05 18:33:07 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 19:43:20 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printf_u(unsigned int n)
 {
-	size_t	count;
+	int	count;
 
 	count = 0;
 	if (n >= 10)
