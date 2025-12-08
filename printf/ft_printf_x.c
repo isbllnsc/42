@@ -21,7 +21,7 @@ int	ft_printf_x_lower(unsigned int n)
 	count = 0;
 	if (n >= 16)
 		count += ft_printf_x_lower(n / 16);
-	return (count += ft_printf_chr(n % 16));
+	return (count += ft_printf_chr(hex[n % 16]));
 }
 
 int	ft_printf_x_upper(unsigned int n)
@@ -33,5 +33,5 @@ int	ft_printf_x_upper(unsigned int n)
 	count = 0;
 	if (n >= 16)
 		count += ft_printf_x_upper(n / 16);
-	return (count += ft_printf_chr(n % 16));
+	return (count += ft_printf_chr(hex[n % 16]));
 }
