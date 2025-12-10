@@ -33,10 +33,13 @@ int	main()
 {
 	ft_printf_id(-42);
         write(1, "\n", 1);
+
 	ft_printf_id(42);
 	write(1, "\n", 1);
+
 	ft_printf_id(-2147483648);
 	write(1, "\n", 1);
+
 	ft_printf_id(0);
         write(1, "\n", 1);
 }*/
