@@ -20,8 +20,11 @@ int	ft_printf_chr(int c)
 
 int	ft_printf_str(char *s)
 {
-	if (!s)
-		return (write(1, "(null)", 6));
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	ft_putstr_fd(s, 1);
 	return (ft_strlen(s));
 }

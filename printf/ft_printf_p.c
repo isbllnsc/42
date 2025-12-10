@@ -16,6 +16,11 @@ int	ft_printf_p(void *ptr)
 {
 	size_t	count;
 
+	if (!ptr)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	count = 2;
 	write(1, "0x", 2);
 	count += ft_printf_x_lower((unsigned long)ptr);

@@ -16,8 +16,27 @@ int	ft_printf_id(int n)
 {
 	int	count;
 
+	if (n == -2147483648)
+		return (write(1, "-2147483648", 11));
+	if (n < 0)
+	{
+		n *= -1;
+		write(1, "-", 1);
+	}
 	count = 0;
 	if (n >= 10)
 		count += ft_printf_id(n / 10);
 	return ((count += ft_printf_chr(n % 10 + '0')));
 }
+/*
+int	main()
+{
+	ft_printf_id(-42);
+        write(1, "\n", 1);
+	ft_printf_id(42);
+	write(1, "\n", 1);
+	ft_printf_id(-2147483648);
+	write(1, "\n", 1);
+	ft_printf_id(0);
+        write(1, "\n", 1);
+}*/

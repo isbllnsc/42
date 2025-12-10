@@ -63,7 +63,7 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 int	main()
 {
 	char chr = 'a';
@@ -74,4 +74,4 @@ int	main()
 	ft_printf("hex a: %x; hex  M: %X\n", chr, chr2);
 	ft_printf("p: %p\n", str);
 	ft_printf("i: %i e d: %d\n", 42, 42);
-}
+}*/
