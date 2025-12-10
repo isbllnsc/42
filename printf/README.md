@@ -33,8 +33,8 @@ Run with:
 
 ## Resources
 
-* `man printf`
-* `man stdarg`
+* man printf
+* man stdarg
 * C standard library documentation
 * Educational articles on formatted output and variadic functions
 
