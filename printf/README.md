@@ -20,7 +20,7 @@ libftprintf.a
 
 ### Usage
 
-To use `ft_printf` in your own program:
+To use ft_printf in your own program:
 cc -Wall -Wextra -Werror main.c libftprintf.a
 
 If also using libft:
