@@ -18,12 +18,12 @@ int	ft_printf_id(int n)
 
 	if (n == -2147483648)
 		return (write(1, "-2147483648", 11));
+	count = 0;
 	if (n < 0)
 	{
 		n *= -1;
-		write(1, "-", 1);
+		count += write(1, "-", 1);
 	}
-	count = 0;
 	if (n >= 10)
 		count += ft_printf_id(n / 10);
 	return ((count += ft_printf_chr(n % 10 + '0')));

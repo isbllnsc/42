@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:36:08 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/12/05 19:15:45 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:00:40 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_printf_p(void *ptr);
 int	ft_printf_u(unsigned int n);
 int	ft_printf_x_lower(unsigned int n);
 int	ft_printf_x_upper(unsigned int n);
+int	ft_printf_x_lower_long(unsigned long long n);
 
 #endif

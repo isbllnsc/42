@@ -6,7 +6,7 @@
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:34:18 by isabde-s          #+#    #+#             */
-/*   Updated: 2025/12/05 20:13:06 by isabde-s         ###   ########.fr       */
+/*   Updated: 2025/12/11 12:53:39 by isabde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	print_type(char type, va_list args)
 	else if (type == 'd' || type == 'i')
 		count += ft_printf_id(va_arg(args, int));
 	else if (type == '%')
-		write(1, "%", 1);
+		count += write(1, "%", 1);
 	else
 		return (-1);
 	return (count);
@@ -63,7 +63,7 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 int	main()
 {
 	char chr = 'a';
@@ -75,4 +75,4 @@ int	main()
 	ft_printf("p: %p\n", str);
 	ft_printf("i: %i e d: %d\n", 42, 42);
 	ft_printf(0);
-}
+}*/
