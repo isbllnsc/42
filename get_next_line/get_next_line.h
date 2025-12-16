@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isabde-s <isabde-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+int ft_strlen(char *s);
+char    *ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 
 #endif
