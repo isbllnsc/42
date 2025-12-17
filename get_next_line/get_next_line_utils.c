@@ -13,6 +13,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int	check_newline(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+	{
+		if (s[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	ft_strlen(char *s)
 {
 	int	i;
@@ -44,8 +60,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (s3);
 }
 
+/*
 int	main()
 {
 	printf("ft_strlen: %d\n", ft_strlen("isa"));
 	printf("ft_strjoin: %s\n", ft_strjoin("isa", "bella"));
 }
+*/
