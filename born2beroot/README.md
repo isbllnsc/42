@@ -43,7 +43,7 @@ During the setup, several technical choices were weighed. Here is the comparison
 | **Use Case** | Ideal for simple, static configurations (like this project). | Better for complex, dynamic environments with changing zones. |
 
 #### 4. VirtualBox vs UTM
-| Feature | VirtualBox (Used) | UTM |
+| F |eature | VirtualBox (Used) | UTM |
 | :--- | :--- | :--- |
 | **Architecture** | Best for x86_64 architecture (Intel/AMD). | Best for ARM64 (Apple Silicon M1/M2/M3) using QEMU. |
 | **Performance** | Native virtualization on standard PCs. | Emulation required for x86 on Mac Silicon (slower), but fast for ARM guests. |
@@ -51,14 +51,40 @@ During the setup, several technical choices were weighed. Here is the comparison
 ### Configuration Highlights
 * **LVM:** 2 Encrypted partitions were created to ensure data security.
 * **SSH:** Configured on port **4242**, with root login disabled.
-* **Password Policy:** strict rules (uppercase, lowercase, numbers, length) enforced via `libpam-pwquality`.
+* **Password Policy:** strict rules (uppercase, lowercase, numbers, length) enforced via libpam-pwquality.
 * **Monitoring:** A custom bash script broadcasts system information to all terminals every 10 minutes.
 
 ---
 
 ## Instructions
 
-To evaluate or run this project, you need the `.vdi` file (virtual disk) and a virtualization software (VirtualBox).
+To evaluate or run this project, you need the .vdi file (virtual disk) and a virtualization software (VirtualBox).
 
 1.  **Installation**:
-    * Ensure VirtualBox
+    * Ensure VirtualBox is installed.
+    * Create a new Machine -> Select Type: Linux / Version: Debian (64-bit).
+    * Do not create a virtual hard disk; instead, select **"Use an Existing Virtual Hard Disk File"** and choose the born2beroot.vdi file.
+
+2.  **Execution**:
+    * Start the VM.
+    * The machine will boot into a TTY interface (Command Line Only).
+    * Login with the user created during defense or root.
+
+3.  **Verification**:
+    * The signature of the machine (shasum) can be verified to ensure no changes were made after submission.
+
+---
+
+## Resources & AI Usage
+
+### References
+* [Cron How-to](https://help.ubuntu.com/community/CronHowto)
+* [GitHub] (https://github.com/gemartin99/Born2beroot-Tester)
+
+### AI Usage Statement
+Artificial Intelligence tools (ChatGPT/Gemini) were used in this project to:
+1.  **Clarify Concepts:** Help understand the theoretical differences between SELinux and AppArmor, and the structure of LVM partitions.
+2.  **Scripting Assistance:** Generate snippets and syntax corrections for the `monitoring.sh` script to properly format the output of commands like free, df, and top.
+3.  **Troubleshooting:** Assist in debugging syntax errors in the bash script (e.g., unary operator expected errors).
+
+The VM installation, partitioning, and security configurations were performed manually to ensure full understanding of the process.
