@@ -43,7 +43,7 @@ During the setup, several technical choices were weighed. Here is the comparison
 | **Use Case** | Ideal for simple, static configurations (like this project). | Better for complex, dynamic environments with changing zones. |
 
 #### 4. VirtualBox vs UTM
-| F |eature | VirtualBox (Used) | UTM |
+| Feature | VirtualBox (Used) | UTM |
 | :--- | :--- | :--- |
 | **Architecture** | Best for x86_64 architecture (Intel/AMD). | Best for ARM64 (Apple Silicon M1/M2/M3) using QEMU. |
 | **Performance** | Native virtualization on standard PCs. | Emulation required for x86 on Mac Silicon (slower), but fast for ARM guests. |
